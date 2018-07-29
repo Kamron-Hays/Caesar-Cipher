@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Caesar Cipher</title>
+    <style>
+      #shift { width: 40px; }
+    </style>
+  </head>
+  <body>
+    <h1>Caesar Cipher</h1>
+
+    <p>
+    In cryptography, a Caesar cipher is one of the simplest and most widely known
+    encryption techniques. It is a type of substitution cipher in which each letter
+    in the plaintext is replaced by a letter some fixed number of positions down
+    the alphabet. For example, with a left shift of 3, D would be replaced by A,
+    E would become B, and so on. The method is named after Julius Caesar, who used
+    it in his private correspondence.
+    </p>
+
+    <p>
+      <form action="/" method="post">
+        Enter text to be encrypted:
+        <textarea name='input' id='input' rows="1" cols="30"></textarea>
+        <br>
+        Enter the amount to shift (either positive or negative):
+        <input type='number' name='shift' id='shift'>
+        <br>
+        <input type='submit'>
+      </form>
+
+      <% if session[:cipher] != nil %>
+        Encrypted text:
+        <p><%= session[:cipher] %></p>
+      <% end %>
+    </p>
+  </body>
+</html>
